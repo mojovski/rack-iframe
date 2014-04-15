@@ -51,6 +51,7 @@ module Rack
 
       def set_p3p_header?(env)
         Rails.logger.info "[iframe-rack]: User agent: #{user_agent(env)}"
+        Rails.logger.info "[iframe-rack] detected IE/safari?: #{user_agents?([:ie, :safari], env)}"
         user_agents?([:ie, :safari], env)
       end
 
