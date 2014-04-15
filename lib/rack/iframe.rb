@@ -57,7 +57,7 @@ module Rack
       def user_agent?(id, env)
         case id
         when :ie
-          user_agent(env).include?('MSIE') or user_agent(env).include?('.NET')
+          user_agent(env).include?('MSIE') or user_agent(env).include?('rv:11.0') #explicitly added IE11
         when :safari
           user_agent(env).include?('Safari')
         when :opera
