@@ -46,6 +46,7 @@ module Rack
       end
 
       def set_p3p_header!
+        Rails.logger.info "setting p3p header to #{@options[:p3p]}"
         @headers['P3P'] = @options[:p3p]
       end
 
