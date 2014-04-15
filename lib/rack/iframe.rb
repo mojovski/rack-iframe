@@ -50,13 +50,14 @@ module Rack
       end
 
       def set_p3p_header?(env)
+        Rails.logger.info "[iframe-rack]: User agent: #{user_agent(env)}"
         user_agents?([:ie, :safari], env)
       end
 
       def user_agent?(id, env)
         case id
         when :ie
-          user_agent(env).include?('MSIE')
+          user_agent(env).include?('MSIE') or user_agent(env).include?('.NET')
         when :safari
           user_agent(env).include?('Safari')
         when :opera
