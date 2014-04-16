@@ -46,13 +46,13 @@ module Rack
       end
 
       def set_p3p_header!
-        Rails.logger.info "setting p3p header to #{@options[:p3p]}"
+        #Rails.logger.info "setting p3p header to #{@options[:p3p]}"
         @headers['P3P'] = @options[:p3p]
       end
 
       def set_p3p_header?(env)
-        Rails.logger.info "[iframe-rack]: User agent: #{user_agent(env)}"
-        Rails.logger.info "[iframe-rack] detected IE/safari?: #{user_agents?([:ie, :safari], env)}"
+        #Rails.logger.info "[iframe-rack]: User agent: #{user_agent(env)}"
+        #Rails.logger.info "[iframe-rack] detected IE/safari?: #{user_agents?([:ie, :safari], env)}"
         user_agents?([:ie, :safari], env)
       end
 
